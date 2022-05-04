@@ -1,0 +1,6 @@
+*.sqlite3
+.deepface
+.vscode
+venv
+__pycache__
+media
