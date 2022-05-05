@@ -34,7 +34,9 @@ class CreateStudentView(CreateAPIView):
     def perform_create(self, serializer):
         super().perform_create(serializer)
         obj = serializer.instance
-        obj.photo_embeddings = b64encode(get_photo_embeddings(obj.photo.path).tobytes())
+        obj.photo_embeddings = b64encode(
+            get_photo_embeddings(obj.photo.path).tobytes()
+        ).decode()
         obj.save()
 
 
